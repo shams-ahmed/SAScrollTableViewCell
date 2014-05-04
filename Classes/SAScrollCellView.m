@@ -13,11 +13,10 @@
 
 @interface  SAScrollCellView () <UICollectionViewDataSource, UICollectionViewDelegate>
 
-@property (strong, nonatomic) SAImageCollectionViewCell *myCollectionViewCell;
-@property (strong, nonatomic) UICollectionView *myCollectionView;
-@property (strong, nonatomic) NSArray *collectionImageData;
-@property (strong, nonatomic) UIColor *imageTilteBackgroundColor;
-@property (strong, nonatomic) UIColor *imageTilteTextColor;
+@property (strong, nonatomic) UICollectionView *collectionView;
+@property (strong, nonatomic) NSArray *mediaContainer;
+@property (strong, nonatomic) UIColor *textBackgroundColor;
+@property (strong, nonatomic) UIColor *textColor;
 
 @end
 
@@ -25,7 +24,7 @@
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
-    
+
     if (self) {
         UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
         flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
@@ -37,34 +36,36 @@
         flowLayout.minimumLineSpacing = 10;
 
 
-        self.myCollectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:flowLayout];
-        self.myCollectionView.delegate = self;
-        self.myCollectionView.dataSource = self;
-        self.myCollectionView.showsHorizontalScrollIndicator = NO;
+        self.collectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:flowLayout];
+        self.collectionView.delegate = self;
+        self.collectionView.dataSource = self;
+        self.collectionView.showsHorizontalScrollIndicator = NO;
 
-        [self.myCollectionView registerClass:[SAImageCollectionViewCell class] forCellWithReuseIdentifier:@"SAImageCollectionCell"];
-        [self.myCollectionView registerClass:[SAMediaCollectionViewCell class] forCellWithReuseIdentifier:@"SAMediaCollectionCell"];
+        [self.collectionView registerClass:[SAImageCollectionViewCell class] forCellWithReuseIdentifier:@"SAImageCollectionCell"];
+        [self.collectionView registerClass:[SAMediaCollectionViewCell class] forCellWithReuseIdentifier:@"SAMediaCollectionCell"];
 
-        [self addSubview:self.myCollectionView];
+        [self addSubview:self.collectionView];
+
     }
 
     return self;
 }
 
 - (void)setData:(NSArray *)collectionImageData {
-    _collectionImageData = collectionImageData;
-    [_myCollectionView reloadData];
+    self.mediaContainer = collectionImageData;
+    [self.collectionView reloadData];
 
 }
 
 - (void)setBackgroundColor:(UIColor*)color {
-    self.myCollectionView.backgroundColor = color;
-    [_myCollectionView reloadData];
+    self.collectionView.backgroundColor = color;
+    [self.collectionView reloadData];
+
 }
 
 - (void)setTitleTextColor:(UIColor *)textColor withBackgroundColor:(UIColor *)bgColor{
-    _imageTilteTextColor = textColor;
-    _imageTilteBackgroundColor = bgColor;
+    self.textColor = textColor;
+    self.textBackgroundColor = bgColor;
 
 }
 
@@ -75,11 +76,11 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.collectionImageData.count;
+    return self.mediaContainer.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    SAMediaObject *mediaObject = self.collectionImageData[indexPath.row];
+    SAMediaObject *mediaObject = self.mediaContainer[indexPath.row];
 
     static NSString *cellImageIdentify = @"SAImageCollectionCell";
     static NSString *cellMediaIdentify = @"SAMediaCollectionCell";
@@ -92,7 +93,7 @@
 
     switch (mediaObject.type) {
         case SAMediaTypeImage:
-            [cell setTitleTextColor:_imageTilteTextColor withBackgroundColor:_imageTilteBackgroundColor];
+            [cell setTitleTextColor:self.textColor withBackgroundColor:self.textBackgroundColor];
             [cell setTitle:mediaObject.title];
 
             [cell setImage:[UIImage imageNamed:mediaObject.object]];
@@ -100,7 +101,7 @@
             break;
 
         case SAMediaTypeRawImage:
-            [cell setTitleTextColor:_imageTilteTextColor withBackgroundColor:_imageTilteBackgroundColor];
+            [cell setTitleTextColor:self.textColor withBackgroundColor:self.textBackgroundColor];
             [cell setTitle:mediaObject.title];
 
             [cell setImage:[UIImage imageWithData:mediaObject.object]];
@@ -118,7 +119,7 @@
             return mediaCell;
         }
         case SAMediaTypeOther:
-            NSAssert(nil, @"not complete yet...");
+            NSAssert(nil, @"not complete yet..., best to use for subclass");
 
             break;
         default:
@@ -132,11 +133,11 @@
     if ([[collectionView cellForItemAtIndexPath:indexPath] isMemberOfClass:[SAMediaCollectionViewCell class]]) {
         SAMediaCollectionViewCell *mediaCell = (SAMediaCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
         [mediaCell playStop];
-
+        
     }
-
+    
     [self.delegate collectionView:self didSelectItemAtIndexPath:indexPath];
-
+    
 }
 
 

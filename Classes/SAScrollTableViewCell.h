@@ -22,7 +22,7 @@
  *  @param indexPath           postion of media which got selected
  *  @param Row                 table row
  */
-- (void)scrollTableViewCell:(SAScrollTableViewCell *)scrollTableViewCell didSelectMediaAtIndexPath:(NSIndexPath *)indexPath atRow:(NSInteger)Row;
+- (void)scrollTableViewCell:(SAScrollTableViewCell *)scrollTableViewCell didSelectMediaAtIndexPath:(NSIndexPath *)indexPath atRow:(NSInteger)row;
 
 @end
 

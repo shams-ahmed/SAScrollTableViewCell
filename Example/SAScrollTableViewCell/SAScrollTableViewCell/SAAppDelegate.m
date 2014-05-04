@@ -12,9 +12,10 @@
 @implementation SAAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = [[SAViewController alloc] initWithStyle:UITableViewStylePlain];
-    [self.window makeKeyAndVisible];
     [self.window makeKeyWindow];
+      [self.window makeKeyAndVisible];
 
     return YES;
 }

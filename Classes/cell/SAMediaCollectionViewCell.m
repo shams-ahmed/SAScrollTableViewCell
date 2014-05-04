@@ -49,7 +49,7 @@ static CGFloat iconSize = 35.0;
     self.moviePlayerController.contentURL = url;
 
     [self.contentView addSubview:self.moviePlayerController.view];
-    
+
 }
 
 - (void)playStop {

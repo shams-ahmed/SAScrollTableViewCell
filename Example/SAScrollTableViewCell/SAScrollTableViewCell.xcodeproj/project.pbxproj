@@ -29,7 +29,6 @@
 /* Begin PBXFileReference section */
 		038B14A6191463380076339F /* SAScrollTableViewCell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SAScrollTableViewCell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		038B14A9191463380076339F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		038B14AB191463380076339F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		038B14AD191463380076339F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		038B14B1191463390076339F /* SAScrollTableViewCell-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SAScrollTableViewCell-Info.plist"; sourceTree = "<group>"; };
 		038B14B5191463390076339F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -40,7 +39,6 @@
 		038B14E519146C290076339F /* SAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAViewController.h; sourceTree = "<group>"; };
 		038B14E619146C290076339F /* SAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAViewController.m; sourceTree = "<group>"; };
 		038B150119146DBA0076339F /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		038B150319146DC90076339F /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		03C5907C19159C7700280037 /* sample1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample1.jpg; sourceTree = "<group>"; };
 		03C5907D19159C7700280037 /* sample1.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = sample1.mov; sourceTree = "<group>"; };
 		03C5907F19159C7700280037 /* sample2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample2.jpg; sourceTree = "<group>"; };
@@ -93,10 +91,8 @@
 		038B14A8191463380076339F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				038B150319146DC90076339F /* AssetsLibrary.framework */,
 				038B150119146DBA0076339F /* MediaPlayer.framework */,
 				038B14A9191463380076339F /* Foundation.framework */,
-				038B14AB191463380076339F /* CoreGraphics.framework */,
 				038B14AD191463380076339F /* UIKit.framework */,
 			);
 			name = Frameworks;
@@ -344,6 +340,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SAScrollTableViewCell/SAScrollTableViewCell-Prefix.pch";
 				INFOPLIST_FILE = "SAScrollTableViewCell/SAScrollTableViewCell-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -357,6 +354,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SAScrollTableViewCell/SAScrollTableViewCell-Prefix.pch";
 				INFOPLIST_FILE = "SAScrollTableViewCell/SAScrollTableViewCell-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

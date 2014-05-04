@@ -10,7 +10,6 @@
 #import "SAScrollCellView.h"
 
 #define kScrollViewHieght 120
-#define kStartPointY 15
 
 @interface SAScrollTableViewCell() <SAScrollViewDelegate>
 
@@ -25,7 +24,6 @@
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        // Initialization code
         [self initialize];
 
     }
@@ -40,9 +38,8 @@
 }
 
 - (void)initialize {
-    // Set ScrollImageTableCellView
     self.scrollView = [[SAScrollCellView alloc] initWithFrame:CGRectMake(0,
-                                                                        kStartPointY,
+                                                                        0,
                                                                         CGRectGetWidth(self.frame),
                                                                         kScrollViewHieght)];
 

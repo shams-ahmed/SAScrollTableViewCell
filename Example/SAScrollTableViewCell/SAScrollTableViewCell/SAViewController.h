@@ -11,7 +11,5 @@
 
 @interface SAViewController : UITableViewController <SAScrollTableViewCellDelegate>
 
-@property (nonatomic, strong) NSMutableArray *media;
-
 
 @end

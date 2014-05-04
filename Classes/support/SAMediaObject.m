@@ -12,6 +12,15 @@
 
 #pragma mark -
 #pragma mark - class method
++ (id)mediaWithType:(SAMediaType)type object:(id)object {
+    SAMediaObject *mediaObject = [[SAMediaObject alloc] init];
+    mediaObject.type = type;
+    mediaObject.object = object;
+
+    return mediaObject;
+
+}
+
 + (id)mediaWithType:(SAMediaType)type title:(NSString *)title object:(id)object {
     SAMediaObject *mediaObject = [[SAMediaObject alloc] init];
     mediaObject.type = type;
