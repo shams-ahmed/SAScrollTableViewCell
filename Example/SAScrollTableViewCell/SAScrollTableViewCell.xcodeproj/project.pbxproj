@@ -23,7 +23,7 @@
 		03C590A0191671B200280037 /* SAPlayControl.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C59095191671B200280037 /* SAPlayControl.png */; };
 		03C590A2191671B200280037 /* SAScrollCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C59098191671B200280037 /* SAScrollCellView.m */; };
 		03C590A3191671B200280037 /* SAScrollTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5909A191671B200280037 /* SAScrollTableViewCell.m */; };
-		03C590A4191671B200280037 /* SAMediaObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5909D191671B200280037 /* SAMediaObject.m */; };
+		03C590A4191671B200280037 /* SAScrollMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5909D191671B200280037 /* SAScrollMedia.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,8 +52,8 @@
 		03C59098191671B200280037 /* SAScrollCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAScrollCellView.m; sourceTree = "<group>"; };
 		03C59099191671B200280037 /* SAScrollTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAScrollTableViewCell.h; sourceTree = "<group>"; };
 		03C5909A191671B200280037 /* SAScrollTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAScrollTableViewCell.m; sourceTree = "<group>"; };
-		03C5909C191671B200280037 /* SAMediaObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMediaObject.h; sourceTree = "<group>"; };
-		03C5909D191671B200280037 /* SAMediaObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMediaObject.m; sourceTree = "<group>"; };
+		03C5909C191671B200280037 /* SAScrollMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAScrollMedia.h; sourceTree = "<group>"; };
+		03C5909D191671B200280037 /* SAScrollMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAScrollMedia.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,8 +171,8 @@
 		03C5909B191671B200280037 /* support */ = {
 			isa = PBXGroup;
 			children = (
-				03C5909C191671B200280037 /* SAMediaObject.h */,
-				03C5909D191671B200280037 /* SAMediaObject.m */,
+				03C5909C191671B200280037 /* SAScrollMedia.h */,
+				03C5909D191671B200280037 /* SAScrollMedia.m */,
 			);
 			path = support;
 			sourceTree = "<group>";
@@ -251,7 +251,7 @@
 				03C590A3191671B200280037 /* SAScrollTableViewCell.m in Sources */,
 				038B14E819146C290076339F /* SAViewController.m in Sources */,
 				03C5909F191671B200280037 /* SAMediaCollectionViewCell.m in Sources */,
-				03C590A4191671B200280037 /* SAMediaObject.m in Sources */,
+				03C590A4191671B200280037 /* SAScrollMedia.m in Sources */,
 				038B14B6191463390076339F /* main.m in Sources */,
 				03C590A2191671B200280037 /* SAScrollCellView.m in Sources */,
 			);
@@ -340,7 +340,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SAScrollTableViewCell/SAScrollTableViewCell-Prefix.pch";
 				INFOPLIST_FILE = "SAScrollTableViewCell/SAScrollTableViewCell-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -354,7 +354,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SAScrollTableViewCell/SAScrollTableViewCell-Prefix.pch";
 				INFOPLIST_FILE = "SAScrollTableViewCell/SAScrollTableViewCell-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

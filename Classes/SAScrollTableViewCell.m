@@ -7,13 +7,10 @@
 //
 
 #import "SAScrollTableViewCell.h"
-#import "SAScrollCellView.h"
 
 #define kScrollViewHieght 120
 
 @interface SAScrollTableViewCell() <SAScrollViewDelegate>
-
-@property (strong, nonatomic) SAScrollCellView *scrollView;
 
 @end
 
@@ -45,6 +42,8 @@
 
     self.scrollView.delegate = self;
 
+    [self.contentView addSubview:self.scrollView];
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -62,12 +61,10 @@
 
 }
 
-- (void)setBackgroundColor:(UIColor *)color {
+- (void)setScrollBackgroundColor:(UIColor *)color {
     if (color) {
         self.scrollView.backgroundColor = color;
     }
-
-    [self.contentView addSubview:self.scrollView];
 
 }
 

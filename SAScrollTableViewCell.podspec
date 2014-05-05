@@ -12,6 +12,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.source_files = 'Classes/**/*.{h,m}'
+  s.resources = 'Classes/**/*.{h,m}'
 
   s.frameworks = 'MediaPlayer'
 end

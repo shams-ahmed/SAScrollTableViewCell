@@ -20,6 +20,8 @@
 
 @property (weak, nonatomic) id<SAScrollViewDelegate> delegate;
 
+@property (strong, nonatomic) UICollectionView *collectionView;
+
 - (void)setTitleTextColor:(UIColor *)textColor withBackgroundColor:(UIColor *)bgColor;
 - (void)setData:(NSArray *)collectionImageData;
 - (void)setBackgroundColor:(UIColor *)color;

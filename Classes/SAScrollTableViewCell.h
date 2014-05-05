@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SAMediaObject.h"
+#import "SAScrollCellView.h"
+#import "SAScrollMedia.h"
 
 @class SAScrollTableViewCell;
 
@@ -28,7 +29,15 @@
 
 @interface SAScrollTableViewCell : UITableViewCell
 
+/**
+ *  media cell delegate
+ */
 @property (weak, nonatomic) id<SAScrollTableViewCellDelegate> delegate;
+
+/**
+ *  collection view used in cell
+ */
+@property (strong, nonatomic) SAScrollCellView *scrollView;
 
 /**
  *  Set all media object i.e images, video etc..
@@ -40,9 +49,9 @@
 /**
  *  background color of cell
  *
- *  @param color uicolor object, always default to white
+ *  @param color UIColor object, always default to white
  */
-- (void)setBackgroundColor:(UIColor *)color;
+- (void)setScrollBackgroundColor:(UIColor *)color;
 
 /**
  *  title color and background

@@ -51,12 +51,19 @@
      *  returned a array of SAMediaObject objects that holds all information about a media file.
      */
     [cell setMedia:@[
-                     [SAMediaObject mediaWithType:SAMediaTypeVideoAsset
+                     [SAScrollMedia mediaWithType:SAScrollMediaTypeVideoAsset
                                            object:[[NSBundle mainBundle] URLForResource:@"sample1" withExtension:@"mov"]],
-                     [SAMediaObject mediaWithType:SAMediaTypeImage title:@"Title" object:@"sample1.jpg"],
-                     [SAMediaObject mediaWithType:SAMediaTypeImage title:@"Title" object:@"sample2.jpg"],
-                     [SAMediaObject mediaWithType:SAMediaTypeImage title:@"Title" object:@"sample3.jpg"]
-                     ]];
+                     [SAScrollMedia mediaWithType:SAScrollMediaTypeImageName
+                                            title:@"Title"
+                                           object:@"sample1.jpg"],
+                     [SAScrollMedia mediaWithType:SAScrollMediaTypeImageName
+                                            title:@"Title"
+                                           object:@"sample2.jpg"],
+                     [SAScrollMedia mediaWithType:SAScrollMediaTypeImageObject
+                                            title:@"Title"
+                                           object:[UIImage imageNamed:@"sample3.jpg"]]
+                     ]
+     ];
 
     return cell;
 }

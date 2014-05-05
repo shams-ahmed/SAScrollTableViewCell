@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 SA. All rights reserved.
 //
 
-#import "SAMediaObject.h"
+#import "SAScrollMedia.h"
 
-@implementation SAMediaObject
+@implementation SAScrollMedia
 
 #pragma mark -
 #pragma mark - class method
-+ (id)mediaWithType:(SAMediaType)type object:(id)object {
-    SAMediaObject *mediaObject = [[SAMediaObject alloc] init];
++ (id)mediaWithType:(SAScrollMediaType)type object:(id)object {
+    SAScrollMedia *mediaObject = [[SAScrollMedia alloc] init];
     mediaObject.type = type;
     mediaObject.object = object;
 
@@ -21,8 +21,8 @@
 
 }
 
-+ (id)mediaWithType:(SAMediaType)type title:(NSString *)title object:(id)object {
-    SAMediaObject *mediaObject = [[SAMediaObject alloc] init];
++ (id)mediaWithType:(SAScrollMediaType)type title:(NSString *)title object:(id)object {
+    SAScrollMedia *mediaObject = [[SAScrollMedia alloc] init];
     mediaObject.type = type;
     mediaObject.title = title;
     mediaObject.object = object;
@@ -43,16 +43,17 @@
     NSString *type;
 
     switch (self.type) {
-        case SAMediaTypeImage:
+        case SAScrollMediaTypeImageName:
+        case SAScrollMediaTypeImageObject:
             type = @"image";
             break;
-        case SAMediaTypeRawImage:
+        case SAScrollMediaTypeRawImage:
             type = @"raw image";
             break;
-        case SAMediaTypeVideoAsset:
+        case SAScrollMediaTypeVideoAsset:
             type = @"video url";
             break;
-        case SAMediaTypeOther:
+        case SAScrollMediaTypeOther:
             if (self.mediaClass) {
                 type = NSStringFromClass(self.mediaClass);
             } else {

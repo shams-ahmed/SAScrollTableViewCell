@@ -11,7 +11,7 @@
 @interface SAImageCollectionViewCell ()
 
 @property (strong, nonatomic) UIImageView *imageView;
-@property (strong, nonatomic) UITextView *titleView;
+@property (strong, nonatomic) UILabel *titleView;
 
 @end
 
@@ -26,7 +26,7 @@
                                                                        CGRectGetWidth(frame),
                                                                        CGRectGetHeight(frame))];
 
-        self.titleView = [[UITextView alloc] initWithFrame:CGRectMake(0.0,
+        self.titleView = [[UILabel alloc] initWithFrame:CGRectMake(0.0,
                                                                       CGRectGetHeight(self.imageView.frame)-30,
                                                                       CGRectGetWidth(frame),
                                                                       20)];
@@ -34,6 +34,12 @@
         self.titleView.userInteractionEnabled = NO;
         self.titleView.textColor = [UIColor whiteColor];
         self.titleView.backgroundColor = [UIColor colorWithWhite:0.1 alpha:0.3];
+        self.titleView.adjustsFontSizeToFitWidth = YES;
+        self.titleView.font = [UIFont preferredFontForTextStyle:UIFontTextStyleCaption2];
+        self.titleView.textAlignment = NSTextAlignmentCenter;
+        
+        [self.contentView addSubview:self.imageView];
+        [self.contentView addSubview:self.titleView];
 
     }
 
@@ -57,17 +63,8 @@
 }
 
 - (void)setTitle:(NSString *)title {
-//    if ([self.contentView subviews]){
-//        for (UILabel *subview in [self.contentView subviews]) {
-//            [subview removeFromSuperview];
-//        }
-//    }
-
-    [self.contentView addSubview:self.imageView];
-
     self.titleView.text = title;
-    [self.contentView addSubview:self.titleView];
-    
+
 }
 
 

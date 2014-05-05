@@ -9,11 +9,10 @@
 #import "SAScrollCellView.h"
 #import "SAImageCollectionViewCell.h"
 #import "SAMediaCollectionViewCell.h"
-#import "SAMediaObject.h"
+#import "SAScrollMedia.h"
 
 @interface  SAScrollCellView () <UICollectionViewDataSource, UICollectionViewDelegate>
 
-@property (strong, nonatomic) UICollectionView *collectionView;
 @property (strong, nonatomic) NSArray *mediaContainer;
 @property (strong, nonatomic) UIColor *textBackgroundColor;
 @property (strong, nonatomic) UIColor *textColor;
@@ -35,11 +34,11 @@
                                                    10);
         flowLayout.minimumLineSpacing = 10;
 
-
         self.collectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:flowLayout];
         self.collectionView.delegate = self;
         self.collectionView.dataSource = self;
         self.collectionView.showsHorizontalScrollIndicator = NO;
+        self.collectionView.backgroundColor = [UIColor whiteColor];
 
         [self.collectionView registerClass:[SAImageCollectionViewCell class] forCellWithReuseIdentifier:@"SAImageCollectionCell"];
         [self.collectionView registerClass:[SAMediaCollectionViewCell class] forCellWithReuseIdentifier:@"SAMediaCollectionCell"];
@@ -59,7 +58,6 @@
 
 - (void)setBackgroundColor:(UIColor*)color {
     self.collectionView.backgroundColor = color;
-    [self.collectionView reloadData];
 
 }
 
@@ -80,7 +78,7 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    SAMediaObject *mediaObject = self.mediaContainer[indexPath.row];
+    SAScrollMedia *mediaObject = self.mediaContainer[indexPath.row];
 
     static NSString *cellImageIdentify = @"SAImageCollectionCell";
     static NSString *cellMediaIdentify = @"SAMediaCollectionCell";
@@ -92,22 +90,28 @@
     }
 
     switch (mediaObject.type) {
-        case SAMediaTypeImage:
+        case SAScrollMediaTypeImageName:
             [cell setTitleTextColor:self.textColor withBackgroundColor:self.textBackgroundColor];
             [cell setTitle:mediaObject.title];
 
             [cell setImage:[UIImage imageNamed:mediaObject.object]];
 
             break;
+        case SAScrollMediaTypeImageObject:
+            [cell setTitleTextColor:self.textColor withBackgroundColor:self.textBackgroundColor];
+            [cell setTitle:mediaObject.title];
 
-        case SAMediaTypeRawImage:
+            [cell setImage:mediaObject.object];
+
+            break;
+        case SAScrollMediaTypeRawImage:
             [cell setTitleTextColor:self.textColor withBackgroundColor:self.textBackgroundColor];
             [cell setTitle:mediaObject.title];
 
             [cell setImage:[UIImage imageWithData:mediaObject.object]];
 
             break;
-        case SAMediaTypeVideoAsset: {
+        case SAScrollMediaTypeVideoAsset: {
             SAMediaCollectionViewCell *mediaCell = (SAMediaCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellMediaIdentify forIndexPath:indexPath];
 
             if (!mediaCell) {
@@ -118,7 +122,7 @@
 
             return mediaCell;
         }
-        case SAMediaTypeOther:
+        case SAScrollMediaTypeOther:
             NSAssert(nil, @"not complete yet..., best to use for subclass");
 
             break;
