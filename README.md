@@ -7,7 +7,7 @@
 
 An easy-to-use UITableViewCell subclass that implements a scrolling effect cell with media content such as images, video sound etc...  
 
-##### Let's see a tableview examole 
+##### Let's see example
 
 ![Screenshot:](Assets/exmple.gif)
 
