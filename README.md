@@ -15,7 +15,7 @@ An easy-to-use UITableViewCell subclass that implements a scrolling effect cell 
 
 To run the example project; clone the repo and open example project
 
-## How to use?
+## How to use
 
 import class `#import "SAScrollTableViewCell.h"` and add its delegate `SAScrollTableViewCellDelegate`.
 
@@ -35,12 +35,12 @@ Register class inside init or viewDidLoad method `[self.tableView registerClass:
     cell.delegate = self;
 
     [cell setMedia:@[
-                     [SAMediaObject mediaWithType:SAMediaTypeVideoAsset
+                     [SAScrollMedia mediaWithType:SAMediaTypeVideoAsset
                                             title:@"title"
                                            object:[[NSBundle mainBundle] URLForResource:@"sample1" withExtension:@"mov"]],
-                     [SAMediaObject mediaWithType:SAMediaTypeImage title:@"title" object:@"sample1.jpg"],
-                     [SAMediaObject mediaWithType:SAMediaTypeImage title:@"title" object:@"sample2.jpg"],
-                     [SAMediaObject mediaWithType:SAMediaTypeImage title:@"title" object:@"sample3.jpg"]
+                     [SAScrollMedia mediaWithType:SAScrollMediaTypeImageName title:@"title" object:@"sample1.jpg"],
+                     [SAScrollMedia mediaWithType:SAScrollMediaTypeImageName title:@"title" object:@"sample2.jpg"],
+                     [SAScrollMedia mediaWithType:SAScrollMediaTypeImageName title:@"title" object:@"sample3.jpg"]
                      ]];
 
     return cell;
@@ -48,14 +48,32 @@ Register class inside init or viewDidLoad method `[self.tableView registerClass:
 ```
 
 ### Adding media content:
-`SAScrollTableViewCell` expects `SAMediaObject` which holds each media content such as images, video and sound. Use factory method to create object `mediaWithType:(SAMediaType)type title:(NSString *)title object:(id)object;`. At present only four media type are supported use the keys below:
+`SAScrollTableViewCell` expects `SAScrollMedia` which holds each media content such as images, video and sound. Use factory method to create object `mediaWithType:(SAScrollMediaType)type title:(NSString *)title object:(id)object;`. At present only four media type are supported use the keys below:
 
-    `SAMediaTypeImage` takes the name of a image,
-    `SAMediaTypeRawImage` take NSData of a image,
-    `SAMediaTypeVideoAsset` takes url of video such as from the web or a asset file,
-    `SAMediaTypeOther` custom solution for subclassing
-
-
+```objc
+typedef NS_ENUM(NSUInteger, SAScrollMediaType) {
+    /**
+     *  UIImage object
+     */
+    SAScrollMediaTypeImageObject,
+    /**
+     *  name of a file within main bundle i.e sample1.png
+     */
+    SAScrollMediaTypeImageName,
+    /**
+     *  NSData of a image
+     */
+    SAScrollMediaTypeRawImage,
+    /**
+     *  NSURL of a link to a ivdeo file supported by iOS
+     */
+    SAScrollMediaTypeVideoAsset,
+    /**
+     *  for subclassing
+     */
+    SAScrollMediaTypeOther
+};
+```
 
 
 ## Requirements
