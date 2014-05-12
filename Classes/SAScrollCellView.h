@@ -19,7 +19,6 @@
 @interface SAScrollCellView : UIView
 
 @property (weak, nonatomic) id<SAScrollViewDelegate> delegate;
-
 @property (strong, nonatomic) UICollectionView *collectionView;
 
 - (void)setTitleTextColor:(UIColor *)textColor withBackgroundColor:(UIColor *)bgColor;

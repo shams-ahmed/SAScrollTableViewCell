@@ -39,7 +39,7 @@
 
     if (!cell) {
         cell = [[SAScrollTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-
+        
     }
 
     /**
@@ -48,7 +48,12 @@
     cell.delegate = self;
 
     /**
-     *  returned a array of SAMediaObject objects that holds all information about a media file.
+     *  set cell tag to help get the position of selected media
+     */
+    cell.tag = indexPath.row;
+    
+    /**
+     *  returned array of SAMediaObject objects that holds information about media.
      */
     [cell setMedia:@[
                      [SAScrollMedia mediaWithType:SAScrollMediaTypeVideoAsset
@@ -56,12 +61,12 @@
                      [SAScrollMedia mediaWithType:SAScrollMediaTypeImageName
                                             title:@"Title"
                                            object:@"sample1.jpg"],
-                     [SAScrollMedia mediaWithType:SAScrollMediaTypeImageName
+                     [SAScrollMedia mediaWithType:SAScrollMediaTypeImageURL
                                             title:@"Title"
-                                           object:@"sample2.jpg"],
+                                           object:[NSURL URLWithString:@"http://lorempixel.com/250/250"]],
                      [SAScrollMedia mediaWithType:SAScrollMediaTypeImageObject
                                             title:@"Title"
-                                           object:[UIImage imageNamed:@"sample3.jpg"]]
+                                           object:[UIImage imageNamed:@"sample2.jpg"]]
                      ]
      ];
 
@@ -71,7 +76,7 @@
 
 #pragma mark - SAScrollTableViewCellDelegate
 - (void)scrollTableViewCell:(SAScrollTableViewCell *)scrollTableViewCell didSelectMediaAtIndexPath:(NSIndexPath *)indexPath atRow:(NSInteger)row {
-    NSLog(@"cell media: %@, %@", indexPath, @(row));
+    NSLog(@"[SAScrollTableViewCell] row:%d, media selected:%d", (int)row, (int)indexPath.row);
 
 }
 

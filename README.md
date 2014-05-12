@@ -13,7 +13,7 @@ An easy-to-use UITableViewCell subclass that implements a scrolling effect cell 
 
 ## Usage
 
-To run the example project; clone the repo and open example project
+To run the example project; clone the repo, and run pod install from the Project directory first.
 
 ## How to use
 
@@ -65,9 +65,13 @@ typedef NS_ENUM(NSUInteger, SAScrollMediaType) {
      */
     SAScrollMediaTypeRawImage,
     /**
-     *  NSURL of a link to a ivdeo file supported by iOS
+     *  NSURL of a link to a video file supported by iOS
      */
     SAScrollMediaTypeVideoAsset,
+    /**
+     *  NSURL link of image on the web i.e http://lorempixel.com/250/250/
+     */
+    SAScrollMediaTypeImageURL
     /**
      *  for subclassing
      */

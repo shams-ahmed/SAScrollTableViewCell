@@ -11,11 +11,18 @@
 @interface SAImageCollectionViewCell : UICollectionViewCell
 
 /**
- *  set image for view
+ *  set image for imageview
  *
  *  @param image image file
  */
 - (void)setImage:(UIImage *)image;
+
+/**
+ *  set image downloaded from web
+ *
+ *  @param image url
+ */
+- (void)setImageWithURL:(NSURL *)url;
 
 /**
  *  add title to image

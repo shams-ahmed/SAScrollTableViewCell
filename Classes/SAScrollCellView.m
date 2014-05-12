@@ -3,6 +3,7 @@
 //  SAScrollTableViewCell
 //
 //  Created by globalreach-dev on 03/05/2014.
+//  Modified by Passerbied on 11/05/2014.
 //  Copyright (c) 2014 SA. All rights reserved.
 //
 
@@ -122,8 +123,15 @@
 
             return mediaCell;
         }
+        case SAScrollMediaTypeImageURL:
+            [cell setTitleTextColor:self.textColor withBackgroundColor:self.textBackgroundColor];
+            [cell setTitle:mediaObject.title];
+            
+            [cell setImageWithURL:mediaObject.object];
+            
+            break;
         case SAScrollMediaTypeOther:
-            NSAssert(nil, @"not complete yet..., best to use for subclass");
+            NSAssert(nil, @"not complete yet..., for subclassing");
 
             break;
         default:

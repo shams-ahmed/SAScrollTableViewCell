@@ -17,13 +17,13 @@
 		03C5908319159C7700280037 /* sample1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 03C5907C19159C7700280037 /* sample1.jpg */; };
 		03C5908419159C7700280037 /* sample1.mov in Resources */ = {isa = PBXBuildFile; fileRef = 03C5907D19159C7700280037 /* sample1.mov */; };
 		03C5908619159C7700280037 /* sample2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 03C5907F19159C7700280037 /* sample2.jpg */; };
-		03C5908719159C7700280037 /* sample3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 03C5908019159C7700280037 /* sample3.jpg */; };
-		03C5909E191671B200280037 /* SAImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C59091191671B200280037 /* SAImageCollectionViewCell.m */; };
-		03C5909F191671B200280037 /* SAMediaCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C59093191671B200280037 /* SAMediaCollectionViewCell.m */; };
-		03C590A0191671B200280037 /* SAPlayControl.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C59095191671B200280037 /* SAPlayControl.png */; };
-		03C590A2191671B200280037 /* SAScrollCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C59098191671B200280037 /* SAScrollCellView.m */; };
-		03C590A3191671B200280037 /* SAScrollTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5909A191671B200280037 /* SAScrollTableViewCell.m */; };
-		03C590A4191671B200280037 /* SAScrollMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5909D191671B200280037 /* SAScrollMedia.m */; };
+		B377E5EB7CA944C8B6BF8FA7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76B7696781E84E6D9261ED11 /* libPods.a */; };
+		D5C0CB0B1920E1CF008D7384 /* SAImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D5C0CAFF1920E1CF008D7384 /* SAImageCollectionViewCell.m */; };
+		D5C0CB0C1920E1CF008D7384 /* SAMediaCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D5C0CB011920E1CF008D7384 /* SAMediaCollectionViewCell.m */; };
+		D5C0CB0D1920E1CF008D7384 /* SAPlayControl.png in Resources */ = {isa = PBXBuildFile; fileRef = D5C0CB031920E1CF008D7384 /* SAPlayControl.png */; };
+		D5C0CB0E1920E1CF008D7384 /* SAScrollCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5C0CB051920E1CF008D7384 /* SAScrollCellView.m */; };
+		D5C0CB0F1920E1CF008D7384 /* SAScrollTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D5C0CB071920E1CF008D7384 /* SAScrollTableViewCell.m */; };
+		D5C0CB101920E1CF008D7384 /* SAScrollMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = D5C0CB0A1920E1CF008D7384 /* SAScrollMedia.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,18 +42,19 @@
 		03C5907C19159C7700280037 /* sample1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample1.jpg; sourceTree = "<group>"; };
 		03C5907D19159C7700280037 /* sample1.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = sample1.mov; sourceTree = "<group>"; };
 		03C5907F19159C7700280037 /* sample2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample2.jpg; sourceTree = "<group>"; };
-		03C5908019159C7700280037 /* sample3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample3.jpg; sourceTree = "<group>"; };
-		03C59090191671B200280037 /* SAImageCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAImageCollectionViewCell.h; sourceTree = "<group>"; };
-		03C59091191671B200280037 /* SAImageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAImageCollectionViewCell.m; sourceTree = "<group>"; };
-		03C59092191671B200280037 /* SAMediaCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMediaCollectionViewCell.h; sourceTree = "<group>"; };
-		03C59093191671B200280037 /* SAMediaCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMediaCollectionViewCell.m; sourceTree = "<group>"; };
-		03C59095191671B200280037 /* SAPlayControl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SAPlayControl.png; sourceTree = "<group>"; };
-		03C59097191671B200280037 /* SAScrollCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAScrollCellView.h; sourceTree = "<group>"; };
-		03C59098191671B200280037 /* SAScrollCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAScrollCellView.m; sourceTree = "<group>"; };
-		03C59099191671B200280037 /* SAScrollTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAScrollTableViewCell.h; sourceTree = "<group>"; };
-		03C5909A191671B200280037 /* SAScrollTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAScrollTableViewCell.m; sourceTree = "<group>"; };
-		03C5909C191671B200280037 /* SAScrollMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAScrollMedia.h; sourceTree = "<group>"; };
-		03C5909D191671B200280037 /* SAScrollMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAScrollMedia.m; sourceTree = "<group>"; };
+		76B7696781E84E6D9261ED11 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5C0CAFE1920E1CF008D7384 /* SAImageCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAImageCollectionViewCell.h; sourceTree = "<group>"; };
+		D5C0CAFF1920E1CF008D7384 /* SAImageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAImageCollectionViewCell.m; sourceTree = "<group>"; };
+		D5C0CB001920E1CF008D7384 /* SAMediaCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMediaCollectionViewCell.h; sourceTree = "<group>"; };
+		D5C0CB011920E1CF008D7384 /* SAMediaCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMediaCollectionViewCell.m; sourceTree = "<group>"; };
+		D5C0CB031920E1CF008D7384 /* SAPlayControl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SAPlayControl.png; sourceTree = "<group>"; };
+		D5C0CB041920E1CF008D7384 /* SAScrollCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAScrollCellView.h; sourceTree = "<group>"; };
+		D5C0CB051920E1CF008D7384 /* SAScrollCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAScrollCellView.m; sourceTree = "<group>"; };
+		D5C0CB061920E1CF008D7384 /* SAScrollTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAScrollTableViewCell.h; sourceTree = "<group>"; };
+		D5C0CB071920E1CF008D7384 /* SAScrollTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAScrollTableViewCell.m; sourceTree = "<group>"; };
+		D5C0CB091920E1CF008D7384 /* SAScrollMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAScrollMedia.h; sourceTree = "<group>"; };
+		D5C0CB0A1920E1CF008D7384 /* SAScrollMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAScrollMedia.m; sourceTree = "<group>"; };
+		DC76D04149DE4BBA908A6E3D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +65,7 @@
 				038B150219146DBA0076339F /* MediaPlayer.framework in Frameworks */,
 				038B14AE191463380076339F /* UIKit.framework in Frameworks */,
 				038B14AA191463380076339F /* Foundation.framework in Frameworks */,
+				B377E5EB7CA944C8B6BF8FA7 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,10 +75,11 @@
 		038B149D191463380076339F = {
 			isa = PBXGroup;
 			children = (
-				03C5908E191671B200280037 /* SAScrollTableViewCell */,
+				D5C0CAFC1920E1CF008D7384 /* SAScrollTableViewCell */,
 				038B14AF191463380076339F /* SAScrollTableViewCellDemo */,
 				038B14A8191463380076339F /* Frameworks */,
 				038B14A7191463380076339F /* Products */,
+				DC76D04149DE4BBA908A6E3D /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +97,7 @@
 				038B150119146DBA0076339F /* MediaPlayer.framework */,
 				038B14A9191463380076339F /* Foundation.framework */,
 				038B14AD191463380076339F /* UIKit.framework */,
+				76B7696781E84E6D9261ED11 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -129,50 +133,49 @@
 				03C5907C19159C7700280037 /* sample1.jpg */,
 				03C5907D19159C7700280037 /* sample1.mov */,
 				03C5907F19159C7700280037 /* sample2.jpg */,
-				03C5908019159C7700280037 /* sample3.jpg */,
 			);
 			path = media;
 			sourceTree = "<group>";
 		};
-		03C5908E191671B200280037 /* SAScrollTableViewCell */ = {
+		D5C0CAFC1920E1CF008D7384 /* SAScrollTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				03C59099191671B200280037 /* SAScrollTableViewCell.h */,
-				03C5909A191671B200280037 /* SAScrollTableViewCell.m */,
-				03C59097191671B200280037 /* SAScrollCellView.h */,
-				03C59098191671B200280037 /* SAScrollCellView.m */,
-				03C5908F191671B200280037 /* cell */,
-				03C59094191671B200280037 /* images */,
-				03C5909B191671B200280037 /* support */,
+				D5C0CAFD1920E1CF008D7384 /* cell */,
+				D5C0CB021920E1CF008D7384 /* images */,
+				D5C0CB041920E1CF008D7384 /* SAScrollCellView.h */,
+				D5C0CB051920E1CF008D7384 /* SAScrollCellView.m */,
+				D5C0CB061920E1CF008D7384 /* SAScrollTableViewCell.h */,
+				D5C0CB071920E1CF008D7384 /* SAScrollTableViewCell.m */,
+				D5C0CB081920E1CF008D7384 /* support */,
 			);
 			name = SAScrollTableViewCell;
-			path = ../../Classes;
+			path = ../Classes;
 			sourceTree = "<group>";
 		};
-		03C5908F191671B200280037 /* cell */ = {
+		D5C0CAFD1920E1CF008D7384 /* cell */ = {
 			isa = PBXGroup;
 			children = (
-				03C59090191671B200280037 /* SAImageCollectionViewCell.h */,
-				03C59091191671B200280037 /* SAImageCollectionViewCell.m */,
-				03C59092191671B200280037 /* SAMediaCollectionViewCell.h */,
-				03C59093191671B200280037 /* SAMediaCollectionViewCell.m */,
+				D5C0CAFE1920E1CF008D7384 /* SAImageCollectionViewCell.h */,
+				D5C0CAFF1920E1CF008D7384 /* SAImageCollectionViewCell.m */,
+				D5C0CB001920E1CF008D7384 /* SAMediaCollectionViewCell.h */,
+				D5C0CB011920E1CF008D7384 /* SAMediaCollectionViewCell.m */,
 			);
 			path = cell;
 			sourceTree = "<group>";
 		};
-		03C59094191671B200280037 /* images */ = {
+		D5C0CB021920E1CF008D7384 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				03C59095191671B200280037 /* SAPlayControl.png */,
+				D5C0CB031920E1CF008D7384 /* SAPlayControl.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
 		};
-		03C5909B191671B200280037 /* support */ = {
+		D5C0CB081920E1CF008D7384 /* support */ = {
 			isa = PBXGroup;
 			children = (
-				03C5909C191671B200280037 /* SAScrollMedia.h */,
-				03C5909D191671B200280037 /* SAScrollMedia.m */,
+				D5C0CB091920E1CF008D7384 /* SAScrollMedia.h */,
+				D5C0CB0A1920E1CF008D7384 /* SAScrollMedia.m */,
 			);
 			path = support;
 			sourceTree = "<group>";
@@ -184,9 +187,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 038B14DB191463390076339F /* Build configuration list for PBXNativeTarget "SAScrollTableViewCell" */;
 			buildPhases = (
+				9F8D42DCED68485F890BA03E /* Check Pods Manifest.lock */,
 				038B14A2191463380076339F /* Sources */,
 				038B14A3191463380076339F /* Frameworks */,
 				038B14A4191463380076339F /* Resources */,
+				D313C7FFA8A9475F9798B11D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -234,26 +239,58 @@
 				038B14E219146BB90076339F /* Images.xcassets in Resources */,
 				03C5908419159C7700280037 /* sample1.mov in Resources */,
 				03C5908619159C7700280037 /* sample2.jpg in Resources */,
-				03C5908719159C7700280037 /* sample3.jpg in Resources */,
-				03C590A0191671B200280037 /* SAPlayControl.png in Resources */,
+				D5C0CB0D1920E1CF008D7384 /* SAPlayControl.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9F8D42DCED68485F890BA03E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D313C7FFA8A9475F9798B11D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		038B14A2191463380076339F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03C5909E191671B200280037 /* SAImageCollectionViewCell.m in Sources */,
+				D5C0CB0B1920E1CF008D7384 /* SAImageCollectionViewCell.m in Sources */,
 				038B14E719146C290076339F /* SAAppDelegate.m in Sources */,
-				03C590A3191671B200280037 /* SAScrollTableViewCell.m in Sources */,
+				D5C0CB0F1920E1CF008D7384 /* SAScrollTableViewCell.m in Sources */,
 				038B14E819146C290076339F /* SAViewController.m in Sources */,
-				03C5909F191671B200280037 /* SAMediaCollectionViewCell.m in Sources */,
-				03C590A4191671B200280037 /* SAScrollMedia.m in Sources */,
+				D5C0CB0C1920E1CF008D7384 /* SAMediaCollectionViewCell.m in Sources */,
+				D5C0CB101920E1CF008D7384 /* SAScrollMedia.m in Sources */,
 				038B14B6191463390076339F /* main.m in Sources */,
-				03C590A2191671B200280037 /* SAScrollCellView.m in Sources */,
+				D5C0CB0E1920E1CF008D7384 /* SAScrollCellView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +313,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -292,7 +329,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -315,7 +352,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -325,7 +362,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -334,9 +371,11 @@
 		};
 		038B14DC191463390076339F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC76D04149DE4BBA908A6E3D /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SAScrollTableViewCell/SAScrollTableViewCell-Prefix.pch";
 				INFOPLIST_FILE = "SAScrollTableViewCell/SAScrollTableViewCell-Info.plist";
@@ -348,9 +387,11 @@
 		};
 		038B14DD191463390076339F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC76D04149DE4BBA908A6E3D /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SAScrollTableViewCell/SAScrollTableViewCell-Prefix.pch";
 				INFOPLIST_FILE = "SAScrollTableViewCell/SAScrollTableViewCell-Info.plist";

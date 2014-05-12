@@ -3,6 +3,7 @@
 //  SAScrollTableViewCell
 //
 //  Created by globalreach-dev on 03/05/2014.
+//  Modified by Passerbied on 11/05/2014.
 //  Copyright (c) 2014 SA. All rights reserved.
 //
 
@@ -18,7 +19,6 @@
     mediaObject.object = object;
 
     return mediaObject;
-
 }
 
 + (id)mediaWithType:(SAScrollMediaType)type title:(NSString *)title object:(id)object {
@@ -53,6 +53,9 @@
         case SAScrollMediaTypeVideoAsset:
             type = @"video url";
             break;
+        case SAScrollMediaTypeImageURL:
+            type = @"image url";
+            break;
         case SAScrollMediaTypeOther:
             if (self.mediaClass) {
                 type = NSStringFromClass(self.mediaClass);
@@ -65,7 +68,7 @@
             break;
     }
 
-    return [NSString stringWithFormat:@"title:%@, type:%@, object:%@", self.title, type, [self.object class]];
+    return [NSString stringWithFormat:@"Title:%@, Type:%@, Object:%@", self.title, type, [self.object class]];
 }
 
 

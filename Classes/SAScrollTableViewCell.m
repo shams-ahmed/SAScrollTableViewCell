@@ -8,7 +8,7 @@
 
 #import "SAScrollTableViewCell.h"
 
-#define kScrollViewHieght 120
+#define kScrollViewHeight 120
 
 @interface SAScrollTableViewCell() <SAScrollViewDelegate>
 
@@ -38,7 +38,7 @@
     self.scrollView = [[SAScrollCellView alloc] initWithFrame:CGRectMake(0,
                                                                         0,
                                                                         CGRectGetWidth(self.frame),
-                                                                        kScrollViewHieght)];
+                                                                        kScrollViewHeight)];
 
     self.scrollView.delegate = self;
 
