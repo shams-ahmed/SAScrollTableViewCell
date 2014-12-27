@@ -8,8 +8,6 @@
 
 #import "SAScrollTableViewCell.h"
 
-#define kScrollViewHeight 120
-
 @interface SAScrollTableViewCell() <SAScrollViewDelegate>
 
 @end
@@ -18,7 +16,7 @@
 
 #pragma mark -
 #pragma mark - SAScrollTableViewCell
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         [self initialize];
@@ -34,16 +32,9 @@
 
 }
 
-- (void)initialize {
-    self.scrollView = [[SAScrollCellView alloc] initWithFrame:CGRectMake(0,
-                                                                        0,
-                                                                        CGRectGetWidth(self.frame),
-                                                                        kScrollViewHeight)];
-
-    self.scrollView.delegate = self;
-
-    [self.contentView addSubview:self.scrollView];
-
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -51,6 +42,22 @@
 
 }
 
+
+#pragma mark - Setup
+- (void)initialize {
+    self.scrollView = [[SAScrollCellView alloc] initWithFrame:CGRectMake(0,
+                                                                         0,
+                                                                         CGRectGetWidth(self.frame),
+                                                                         120)];
+    
+    self.scrollView.delegate = self;
+    
+    [self.contentView addSubview:self.scrollView];
+    
+}
+
+
+#pragma mark - Media & Styles
 - (void)setMedia:(NSArray *)media {
     [self.scrollView setData:media];
 
@@ -64,6 +71,7 @@
 - (void)setScrollBackgroundColor:(UIColor *)color {
     if (color) {
         self.scrollView.backgroundColor = color;
+        
     }
 
 }

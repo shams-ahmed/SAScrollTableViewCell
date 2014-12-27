@@ -8,6 +8,8 @@
 
 #import "SAViewController.h"
 
+static NSString *const SACellIdentifier = @"Cell";
+
 @implementation SAViewController
 
 #pragma mark - 
@@ -16,7 +18,7 @@
     self = [super initWithStyle:style];
     if (self) {
         self.tableView.contentInset = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
-        [self.tableView registerClass:[SAScrollTableViewCell class] forCellReuseIdentifier:@"Cell"];
+        [self.tableView registerClass:[SAScrollTableViewCell class] forCellReuseIdentifier:SACellIdentifier];
 
     }
 
@@ -26,19 +28,20 @@
 
 #pragma mark - UITableView
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+   
     return 130;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
     return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *const cellIdentifier = @"Cell";
-    SAScrollTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    SAScrollTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SACellIdentifier];
 
     if (!cell) {
-        cell = [[SAScrollTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[SAScrollTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:SACellIdentifier];
         
     }
 
@@ -53,7 +56,7 @@
     cell.tag = indexPath.row;
     
     /**
-     *  returned array of SAMediaObject objects that holds information about media.
+     *  returned array of SAMediaObject objects that holds information about each media type.
      */
     [cell setMedia:@[
                      [SAScrollMedia mediaWithType:SAScrollMediaTypeVideoAsset

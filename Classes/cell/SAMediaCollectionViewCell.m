@@ -20,31 +20,58 @@ static CGFloat iconSize = 35.0;
 
 @implementation SAMediaCollectionViewCell
 
-- (id)initWithFrame:(CGRect)frame {
+#pragma mark - 
+#pragma mark - Class Method
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        self.moviePlayerController = [[MPMoviePlayerController alloc] init];
-        self.moviePlayerController.shouldAutoplay = NO;
-        self.moviePlayerController.controlStyle = MPMovieControlStyleNone;
-        self.moviePlayerController.allowsAirPlay = NO;
-        self.moviePlayerController.view.frame = CGRectMake(0.0,
-                                                           0.0,
-                                                           CGRectGetWidth(frame),
-                                                           CGRectGetHeight(frame));
-
-        self.controls = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetWidth(frame) - (iconSize + padding),
-                                                                     CGRectGetHeight(frame) - (iconSize + padding),
-                                                                     iconSize,
-                                                                     iconSize)];
-
-        [self.controls setImage:[UIImage imageNamed:@"SAPlayControl"]];
-        [self.moviePlayerController.view addSubview:self.controls];
-
+        [self setup];
+        
     }
 
     return self;
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    
+    if (self) {
+        [self setup];
+        
+    }
+    
+    return self;
+}
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+}
+
+
+#pragma mark - Setup
+- (void)setup {
+    self.moviePlayerController = [[MPMoviePlayerController alloc] init];
+    self.moviePlayerController.shouldAutoplay = NO;
+    self.moviePlayerController.controlStyle = MPMovieControlStyleNone;
+    self.moviePlayerController.allowsAirPlay = NO;
+    self.moviePlayerController.view.frame = CGRectMake(0.0,
+                                                       0.0,
+                                                       CGRectGetWidth(self.frame),
+                                                       CGRectGetHeight(self.frame));
+    
+    self.controls = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.frame) - (iconSize + padding),
+                                                                  CGRectGetHeight(self.frame) - (iconSize + padding),
+                                                                  iconSize,
+                                                                  iconSize)];
+    
+    [self.controls setImage:[UIImage imageNamed:@"SAPlayControl"]];
+    [self.moviePlayerController.view addSubview:self.controls];
+
+}
+
+
+#pragma mark - Media
 - (void)setMedia:(NSURL *)url {
     self.moviePlayerController.contentURL = url;
 

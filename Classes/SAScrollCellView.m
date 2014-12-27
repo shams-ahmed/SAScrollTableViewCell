@@ -12,6 +12,9 @@
 #import "SAMediaCollectionViewCell.h"
 #import "SAScrollMedia.h"
 
+static NSString *SACellImageIdentify = @"SAImageCollectionCell";
+static NSString *SACellMediaIdentify = @"SAMediaCollectionCell";
+
 @interface  SAScrollCellView () <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (strong, nonatomic) NSArray *mediaContainer;
@@ -22,35 +25,63 @@
 
 @implementation SAScrollCellView
 
-- (id)initWithFrame:(CGRect)frame {
+#pragma mark -
+#pragma mark - Class Method
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
 
     if (self) {
-        UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-        flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-        flowLayout.itemSize = CGSizeMake(100.0, 110.0);
-        flowLayout.sectionInset = UIEdgeInsetsMake(5,
-                                                   10,
-                                                   5,
-                                                   10);
-        flowLayout.minimumLineSpacing = 10;
-
-        self.collectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:flowLayout];
-        self.collectionView.delegate = self;
-        self.collectionView.dataSource = self;
-        self.collectionView.showsHorizontalScrollIndicator = NO;
-        self.collectionView.backgroundColor = [UIColor whiteColor];
-
-        [self.collectionView registerClass:[SAImageCollectionViewCell class] forCellWithReuseIdentifier:@"SAImageCollectionCell"];
-        [self.collectionView registerClass:[SAMediaCollectionViewCell class] forCellWithReuseIdentifier:@"SAMediaCollectionCell"];
-
-        [self addSubview:self.collectionView];
-
+        [self setup];
+        
     }
 
     return self;
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    
+    if (self) {
+        [self setup];
+        
+    }
+    
+    return self;
+}
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    [self setup];
+    
+}
+
+
+#pragma mark - Setup
+- (void)setup {
+    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    flowLayout.itemSize = CGSizeMake(100.0, 110.0);
+    flowLayout.sectionInset = UIEdgeInsetsMake(5,
+                                               10,
+                                               5,
+                                               10);
+    flowLayout.minimumLineSpacing = 10;
+    
+    self.collectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:flowLayout];
+    self.collectionView.delegate = self;
+    self.collectionView.dataSource = self;
+    self.collectionView.showsHorizontalScrollIndicator = NO;
+    self.collectionView.backgroundColor = [UIColor whiteColor];
+    
+    [self.collectionView registerClass:[SAImageCollectionViewCell class] forCellWithReuseIdentifier:SACellImageIdentify];
+    [self.collectionView registerClass:[SAMediaCollectionViewCell class] forCellWithReuseIdentifier:SACellMediaIdentify];
+    
+    [self addSubview:self.collectionView];
+
+}
+
+
+#pragma mark - Styles & Media
 - (void)setData:(NSArray *)collectionImageData {
     self.mediaContainer = collectionImageData;
     [self.collectionView reloadData];
@@ -69,25 +100,28 @@
 }
 
 
-#pragma mark - UICollectionViewDataSource methods
+#pragma mark - UICollectionViewDataSource
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    
     return 1;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    
     return self.mediaContainer.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     SAScrollMedia *mediaObject = self.mediaContainer[indexPath.row];
 
-    static NSString *cellImageIdentify = @"SAImageCollectionCell";
-    static NSString *cellMediaIdentify = @"SAMediaCollectionCell";
 
-    SAImageCollectionViewCell *cell = (SAImageCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellImageIdentify forIndexPath:indexPath];
+
+    SAImageCollectionViewCell *cell = (SAImageCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:SACellImageIdentify
+                                                                                                             forIndexPath:indexPath];
 
     if (!cell) {
         cell = [[SAImageCollectionViewCell alloc] init];
+        
     }
 
     switch (mediaObject.type) {
@@ -113,10 +147,12 @@
 
             break;
         case SAScrollMediaTypeVideoAsset: {
-            SAMediaCollectionViewCell *mediaCell = (SAMediaCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellMediaIdentify forIndexPath:indexPath];
+            SAMediaCollectionViewCell *mediaCell = (SAMediaCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:SACellMediaIdentify
+                                                                                                                          forIndexPath:indexPath];
 
             if (!mediaCell) {
                 mediaCell = [[SAMediaCollectionViewCell alloc] init];
+                
             }
 
             [mediaCell setMedia:mediaObject.object];
@@ -131,7 +167,7 @@
             
             break;
         case SAScrollMediaTypeOther:
-            NSAssert(nil, @"not complete yet..., for subclassing");
+            NSAssert(nil, @"not complete yet..., for subclassing later on");
 
             break;
         default:
