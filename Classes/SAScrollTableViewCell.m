@@ -26,15 +26,26 @@
     return self;
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    
+    if (self) {
+        [self initialize];
+        
+    }
+    
+    return self;
+}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     [self initialize];
-
+    
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
