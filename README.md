@@ -99,3 +99,7 @@ shams ahmed, shamsahmed@me.com
 
 SAScrollTableViewCell is available under the MIT license. See the LICENSE file for more info.
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/shams-ahmed/sascrolltableviewcell/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
