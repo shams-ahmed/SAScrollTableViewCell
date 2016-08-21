@@ -13,27 +13,27 @@ static NSString *const SACellIdentifier = @"Cell";
 @implementation SAViewController
 
 #pragma mark - 
-#pragma mark - class method
-- (id)initWithStyle:(UITableViewStyle)style {
+#pragma mark - Class
+
+- (instancetype)initWithStyle:(UITableViewStyle)style {
     self = [super initWithStyle:style];
+   
     if (self) {
         self.tableView.contentInset = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
         [self.tableView registerClass:[SAScrollTableViewCell class] forCellReuseIdentifier:SACellIdentifier];
-
     }
 
     return self;
 }
 
-
+#pragma mark -
 #pragma mark - UITableView
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-   
     return 130;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
     return 4;
 }
 
@@ -42,7 +42,6 @@ static NSString *const SACellIdentifier = @"Cell";
 
     if (!cell) {
         cell = [[SAScrollTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:SACellIdentifier];
-        
     }
 
     /**
@@ -76,12 +75,11 @@ static NSString *const SACellIdentifier = @"Cell";
     return cell;
 }
 
-
+#pragma mark -
 #pragma mark - SAScrollTableViewCellDelegate
+
 - (void)scrollTableViewCell:(SAScrollTableViewCell *)scrollTableViewCell didSelectMediaAtIndexPath:(NSIndexPath *)indexPath atRow:(NSInteger)row {
     NSLog(@"[SAScrollTableViewCell] row:%d, media selected:%d", (int)row, (int)indexPath.row);
-
 }
-
 
 @end

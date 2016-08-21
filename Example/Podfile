@@ -1,1 +1,5 @@
-pod 'SDWebImage'
+use_frameworks!
+
+target "SAScrollTableViewCell" do
+    pod 'SDWebImage'
+end

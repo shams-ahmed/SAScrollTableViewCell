@@ -11,6 +11,9 @@
 
 @implementation SAAppDelegate
 
+#pragma mark -
+#pragma mark - AppDelegate
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [[SAViewController alloc] initWithStyle:UITableViewStylePlain];
@@ -20,6 +23,5 @@
 
     return YES;
 }
-
 
 @end

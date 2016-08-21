@@ -12,8 +12,9 @@
 @implementation SAScrollMedia
 
 #pragma mark -
-#pragma mark - class method
-+ (id)mediaWithType:(SAScrollMediaType)type object:(id)object {
+#pragma mark - Class
+
++ (instancetype)mediaWithType:(SAScrollMediaType)type object:(id)object {
     SAScrollMedia *mediaObject = [[SAScrollMedia alloc] init];
     mediaObject.type = type;
     mediaObject.object = object;
@@ -21,7 +22,7 @@
     return mediaObject;
 }
 
-+ (id)mediaWithType:(SAScrollMediaType)type title:(NSString *)title object:(id)object {
++ (instancetype)mediaWithType:(SAScrollMediaType)type title:(NSString *)title object:(id)object {
     SAScrollMedia *mediaObject = [[SAScrollMedia alloc] init];
     mediaObject.type = type;
     mediaObject.title = title;
@@ -30,14 +31,21 @@
     return mediaObject;
 }
 
-- (id)init {
+#pragma mark -
+#pragma mark - Init
+
+- (instancetype)init {
     self = [super init];
+    
     if (self) {
 
     }
 
     return self;
 }
+
+#pragma mark -
+#pragma mark - Description
 
 - (NSString *)description {
     NSString *type;
@@ -70,6 +78,5 @@
 
     return [NSString stringWithFormat:@"Title:%@, Type:%@, Object:%@", self.title, type, [self.object class]];
 }
-
 
 @end

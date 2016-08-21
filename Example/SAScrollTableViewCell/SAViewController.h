@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 SA. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
+
 #import "SAScrollTableViewCell.h"
 
 @interface SAViewController : UITableViewController <SAScrollTableViewCellDelegate>
-
 
 @end

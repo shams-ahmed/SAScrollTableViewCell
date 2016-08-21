@@ -17,7 +17,7 @@
 		03C5908319159C7700280037 /* sample1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 03C5907C19159C7700280037 /* sample1.jpg */; };
 		03C5908419159C7700280037 /* sample1.mov in Resources */ = {isa = PBXBuildFile; fileRef = 03C5907D19159C7700280037 /* sample1.mov */; };
 		03C5908619159C7700280037 /* sample2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 03C5907F19159C7700280037 /* sample2.jpg */; };
-		B377E5EB7CA944C8B6BF8FA7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76B7696781E84E6D9261ED11 /* libPods.a */; };
+		7BE556613F31CE8E03CDCCE0 /* Pods_SAScrollTableViewCell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 033335E7E0ACA4D163E42EBE /* Pods_SAScrollTableViewCell.framework */; };
 		D5C0CB0B1920E1CF008D7384 /* SAImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D5C0CAFF1920E1CF008D7384 /* SAImageCollectionViewCell.m */; };
 		D5C0CB0C1920E1CF008D7384 /* SAMediaCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D5C0CB011920E1CF008D7384 /* SAMediaCollectionViewCell.m */; };
 		D5C0CB0D1920E1CF008D7384 /* SAPlayControl.png in Resources */ = {isa = PBXBuildFile; fileRef = D5C0CB031920E1CF008D7384 /* SAPlayControl.png */; };
@@ -27,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		033335E7E0ACA4D163E42EBE /* Pods_SAScrollTableViewCell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SAScrollTableViewCell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		038B14A6191463380076339F /* SAScrollTableViewCell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SAScrollTableViewCell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		038B14A9191463380076339F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		038B14AD191463380076339F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -42,9 +43,8 @@
 		03C5907C19159C7700280037 /* sample1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample1.jpg; sourceTree = "<group>"; };
 		03C5907D19159C7700280037 /* sample1.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = sample1.mov; sourceTree = "<group>"; };
 		03C5907F19159C7700280037 /* sample2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample2.jpg; sourceTree = "<group>"; };
-		30436D96E4118823B5A1E995 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		76B7696781E84E6D9261ED11 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		C2C39C5864C3B395D25F90BC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		3CE775E5F63013FCC1145FD4 /* Pods-SAScrollTableViewCell.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SAScrollTableViewCell.release.xcconfig"; path = "Pods/Target Support Files/Pods-SAScrollTableViewCell/Pods-SAScrollTableViewCell.release.xcconfig"; sourceTree = "<group>"; };
+		D1E2E46F016BBEB2661262ED /* Pods-SAScrollTableViewCell.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SAScrollTableViewCell.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SAScrollTableViewCell/Pods-SAScrollTableViewCell.debug.xcconfig"; sourceTree = "<group>"; };
 		D5C0CAFE1920E1CF008D7384 /* SAImageCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAImageCollectionViewCell.h; sourceTree = "<group>"; };
 		D5C0CAFF1920E1CF008D7384 /* SAImageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAImageCollectionViewCell.m; sourceTree = "<group>"; };
 		D5C0CB001920E1CF008D7384 /* SAMediaCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMediaCollectionViewCell.h; sourceTree = "<group>"; };
@@ -66,7 +66,7 @@
 				038B150219146DBA0076339F /* MediaPlayer.framework in Frameworks */,
 				038B14AE191463380076339F /* UIKit.framework in Frameworks */,
 				038B14AA191463380076339F /* Foundation.framework in Frameworks */,
-				B377E5EB7CA944C8B6BF8FA7 /* libPods.a in Frameworks */,
+				7BE556613F31CE8E03CDCCE0 /* Pods_SAScrollTableViewCell.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,7 +80,7 @@
 				038B14AF191463380076339F /* SAScrollTableViewCellDemo */,
 				038B14A8191463380076339F /* Frameworks */,
 				038B14A7191463380076339F /* Products */,
-				11F3C25BFB9BB8851198603D /* Pods */,
+				B755DC2F0FDD4EC5C8822FC6 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,7 +98,7 @@
 				038B150119146DBA0076339F /* MediaPlayer.framework */,
 				038B14A9191463380076339F /* Foundation.framework */,
 				038B14AD191463380076339F /* UIKit.framework */,
-				76B7696781E84E6D9261ED11 /* libPods.a */,
+				033335E7E0ACA4D163E42EBE /* Pods_SAScrollTableViewCell.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -138,11 +138,20 @@
 			path = media;
 			sourceTree = "<group>";
 		};
-		11F3C25BFB9BB8851198603D /* Pods */ = {
+		106BA24D1D6A21250066611D /* view */ = {
 			isa = PBXGroup;
 			children = (
-				30436D96E4118823B5A1E995 /* Pods.debug.xcconfig */,
-				C2C39C5864C3B395D25F90BC /* Pods.release.xcconfig */,
+				D5C0CB041920E1CF008D7384 /* SAScrollCellView.h */,
+				D5C0CB051920E1CF008D7384 /* SAScrollCellView.m */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		B755DC2F0FDD4EC5C8822FC6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D1E2E46F016BBEB2661262ED /* Pods-SAScrollTableViewCell.debug.xcconfig */,
+				3CE775E5F63013FCC1145FD4 /* Pods-SAScrollTableViewCell.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -152,10 +161,9 @@
 			children = (
 				D5C0CB061920E1CF008D7384 /* SAScrollTableViewCell.h */,
 				D5C0CB071920E1CF008D7384 /* SAScrollTableViewCell.m */,
+				106BA24D1D6A21250066611D /* view */,
 				D5C0CAFD1920E1CF008D7384 /* cell */,
 				D5C0CB021920E1CF008D7384 /* images */,
-				D5C0CB041920E1CF008D7384 /* SAScrollCellView.h */,
-				D5C0CB051920E1CF008D7384 /* SAScrollCellView.m */,
 				D5C0CB081920E1CF008D7384 /* support */,
 			);
 			name = SAScrollTableViewCell;
@@ -197,11 +205,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 038B14DB191463390076339F /* Build configuration list for PBXNativeTarget "SAScrollTableViewCell" */;
 			buildPhases = (
-				9F8D42DCED68485F890BA03E /* Check Pods Manifest.lock */,
+				C4CC13396324E2CDC2F935AB /* [CP] Check Pods Manifest.lock */,
 				038B14A2191463380076339F /* Sources */,
 				038B14A3191463380076339F /* Frameworks */,
 				038B14A4191463380076339F /* Resources */,
-				D313C7FFA8A9475F9798B11D /* Copy Pods Resources */,
+				4588BBDAC64FA91C956D15F5 /* [CP] Embed Pods Frameworks */,
+				A8D66F4E3AFF015F831C30E9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -219,7 +228,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = SA;
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = SA;
 			};
 			buildConfigurationList = 038B14A1191463380076339F /* Build configuration list for PBXProject "SAScrollTableViewCell" */;
@@ -256,34 +265,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		9F8D42DCED68485F890BA03E /* Check Pods Manifest.lock */ = {
+		4588BBDAC64FA91C956D15F5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SAScrollTableViewCell/Pods-SAScrollTableViewCell-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D313C7FFA8A9475F9798B11D /* Copy Pods Resources */ = {
+		A8D66F4E3AFF015F831C30E9 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SAScrollTableViewCell/Pods-SAScrollTableViewCell-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C4CC13396324E2CDC2F935AB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -325,6 +349,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -381,7 +406,7 @@
 		};
 		038B14DC191463390076339F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 30436D96E4118823B5A1E995 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = D1E2E46F016BBEB2661262ED /* Pods-SAScrollTableViewCell.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -389,7 +414,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SAScrollTableViewCell/SAScrollTableViewCell-Prefix.pch";
 				INFOPLIST_FILE = "SAScrollTableViewCell/SAScrollTableViewCell-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "sa.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -397,7 +423,7 @@
 		};
 		038B14DD191463390076339F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C2C39C5864C3B395D25F90BC /* Pods.release.xcconfig */;
+			baseConfigurationReference = 3CE775E5F63013FCC1145FD4 /* Pods-SAScrollTableViewCell.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -405,7 +431,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SAScrollTableViewCell/SAScrollTableViewCell-Prefix.pch";
 				INFOPLIST_FILE = "SAScrollTableViewCell/SAScrollTableViewCell-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "sa.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

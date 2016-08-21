@@ -7,7 +7,7 @@
 //  Copyright (c) 2014 SA. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 /**
  *  list of supported media
@@ -42,9 +42,9 @@ typedef NS_ENUM(NSUInteger, SAScrollMediaType) {
 @interface SAScrollMedia : NSObject
 
 @property (nonatomic) SAScrollMediaType type;
-@property (nonatomic) Class mediaClass;
-@property (nonatomic, strong) NSString *title;
-@property (nonatomic, strong) id object;
+@property (nonatomic, nullable) Class mediaClass;
+@property (nonatomic, strong, nullable) NSString *title;
+@property (nonatomic, strong, nullable) id object;
 
 /**
  *  factory method without a title
@@ -54,7 +54,7 @@ typedef NS_ENUM(NSUInteger, SAScrollMediaType) {
  *
  *  @return self
  */
-+ (id)mediaWithType:(SAScrollMediaType)type object:(id)object;
++ (instancetype __nonnull)mediaWithType:(SAScrollMediaType)type object:(id __nullable)object;
 
 /**
  *  factory method with title
@@ -65,7 +65,6 @@ typedef NS_ENUM(NSUInteger, SAScrollMediaType) {
  *
  *  @return self
  */
-+ (id)mediaWithType:(SAScrollMediaType)type title:(NSString *)title object:(id)object;
-
++ (instancetype __nonnull)mediaWithType:(SAScrollMediaType)type title:(NSString * __nonnull)title object:(id __nullable)object;
 
 @end
