@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 SA. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import <MediaPlayer/MediaPlayer.h>
+@import UIKit;
+@import MediaPlayer;
 
 @interface SAMediaCollectionViewCell : UICollectionViewCell
 
@@ -16,12 +16,11 @@
  *
  *  @param url url address such as asset or file
  */
-- (void)setMedia:(NSURL *)url;
+- (void)setMedia:(NSURL * __nonnull)url;
 
 /**
  *  stops or paly movie depending on player status
  */
 - (void)playStop;
-
 
 @end

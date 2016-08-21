@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 SA. All rights reserved.
 //
 
+@import AVKit;
+
 #import "SAMediaCollectionViewCell.h"
 
 static CGFloat padding = 5.0;
@@ -13,8 +15,9 @@ static CGFloat iconSize = 35.0;
 
 @interface SAMediaCollectionViewCell ()
 
-@property (nonatomic, strong) MPMoviePlayerController *moviePlayerController;
-@property (nonatomic, strong) UIImageView *controls;
+@property (nonatomic, strong, nonnull) MPMoviePlayerController *moviePlayerController;
+@property (nonatomic, strong, nonnull) AVPlayer *moviePlayerController1;
+@property (nonatomic, strong, nonnull) UIImageView *controls;
 
 @end
 
@@ -22,22 +25,22 @@ static CGFloat iconSize = 35.0;
 
 #pragma mark - 
 #pragma mark - Class Method
+
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
+   
     if (self) {
         [self setup];
-        
     }
 
     return self;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     
     if (self) {
         [self setup];
-        
     }
     
     return self;
@@ -45,11 +48,11 @@ static CGFloat iconSize = 35.0;
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    
 }
 
-
+#pragma mark -
 #pragma mark - Setup
+
 - (void)setup {
     self.moviePlayerController = [[MPMoviePlayerController alloc] init];
     self.moviePlayerController.shouldAutoplay = NO;
@@ -67,30 +70,25 @@ static CGFloat iconSize = 35.0;
     
     [self.controls setImage:[UIImage imageNamed:@"SAPlayControl"]];
     [self.moviePlayerController.view addSubview:self.controls];
-
 }
 
-
+#pragma mark -
 #pragma mark - Media
+
 - (void)setMedia:(NSURL *)url {
     self.moviePlayerController.contentURL = url;
 
     [self.contentView addSubview:self.moviePlayerController.view];
-
 }
 
 - (void)playStop {
     if (self.moviePlayerController.playbackState == MPMoviePlaybackStateStopped) {
         [self.moviePlayerController play];
         [self.controls setHidden:YES];
-
     } else if (self.moviePlayerController.playbackState == MPMoviePlaybackStatePlaying) {
         [self.moviePlayerController stop];
         [self.controls setHidden:NO];
-
     }
-
 }
-
 
 @end

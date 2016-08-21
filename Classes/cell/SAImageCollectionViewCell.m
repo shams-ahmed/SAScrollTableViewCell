@@ -11,31 +11,31 @@
 
 @interface SAImageCollectionViewCell ()
 
-@property (strong, nonatomic) UIImageView *imageView;
-@property (strong, nonatomic) UILabel *titleView;
+@property (strong, nonatomic, nonnull) UIImageView *imageView;
+@property (strong, nonatomic, nonnull) UILabel *titleView;
 
 @end
 
 @implementation SAImageCollectionViewCell
 
 #pragma mark -
-#pragma mark - Class Method
+#pragma mark - Init
+
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
+    
     if (self) {
         [self setup];
-        
     }
 
     return self;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     
     if (self) {
-        [self setup];
-        
+        [self setup];   
     }
     
     return self;
@@ -43,11 +43,11 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    
 }
 
-
+#pragma mark -
 #pragma mark - Setup
+
 - (void)setup {
     self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0,
                                                                    0.0,
@@ -68,38 +68,31 @@
     
     [self.contentView addSubview:self.imageView];
     [self.contentView addSubview:self.titleView];
-    
 }
 
-
+#pragma mark -
 #pragma mark - Styles & Media
+
 - (void)setImage:(UIImage *)image {
     self.imageView.image = image;
-
 }
 
 - (void)setImageWithURL:(NSURL *)url {
     [self.imageView sd_setImageWithURL:url];
-    
 }
 
 - (void)setTitleTextColor:(UIColor *)textColor withBackgroundColor:(UIColor *)bgColor {
     if (textColor) {
         self.titleView.textColor = textColor;
-        
     }
 
     if (bgColor) {
         self.titleView.backgroundColor = bgColor;
-        
     }
-
 }
 
 - (void)setTitle:(NSString *)title {
     self.titleView.text = title;
-
 }
-
 
 @end

@@ -17,7 +17,7 @@ static NSString *SACellMediaIdentify = @"SAMediaCollectionCell";
 
 @interface  SAScrollCellView () <UICollectionViewDataSource, UICollectionViewDelegate>
 
-@property (strong, nonatomic) NSArray *mediaContainer;
+@property (strong, nonatomic, nonnull) NSArray *mediaContainer;
 @property (strong, nonatomic) UIColor *textBackgroundColor;
 @property (strong, nonatomic) UIColor *textColor;
 
@@ -26,24 +26,23 @@ static NSString *SACellMediaIdentify = @"SAMediaCollectionCell";
 @implementation SAScrollCellView
 
 #pragma mark -
-#pragma mark - Class Method
+#pragma mark - Init
+
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
 
     if (self) {
         [self setup];
-        
     }
 
     return self;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     
     if (self) {
         [self setup];
-        
     }
     
     return self;
@@ -52,11 +51,11 @@ static NSString *SACellMediaIdentify = @"SAMediaCollectionCell";
 - (void)awakeFromNib {
     [super awakeFromNib];
     [self setup];
-    
 }
 
-
+#pragma mark -
 #pragma mark - Setup
+
 - (void)setup {
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
@@ -80,48 +79,45 @@ static NSString *SACellMediaIdentify = @"SAMediaCollectionCell";
 
 }
 
-
+#pragma mark -
 #pragma mark - Styles & Media
+
 - (void)setData:(NSArray *)collectionImageData {
     self.mediaContainer = collectionImageData;
     [self.collectionView reloadData];
 
 }
 
-- (void)setBackgroundColor:(UIColor*)color {
+- (void)setBackgroundColor:(UIColor *)color {
     self.collectionView.backgroundColor = color;
-
 }
+
+#pragma mark -
+#pragma mark - Override
 
 - (void)setTitleTextColor:(UIColor *)textColor withBackgroundColor:(UIColor *)bgColor{
     self.textColor = textColor;
     self.textBackgroundColor = bgColor;
-
 }
 
-
+#pragma mark -
 #pragma mark - UICollectionViewDataSource
+
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    
     return 1;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    
     return self.mediaContainer.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     SAScrollMedia *mediaObject = self.mediaContainer[indexPath.row];
 
-
-
     SAImageCollectionViewCell *cell = (SAImageCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:SACellImageIdentify
                                                                                                              forIndexPath:indexPath];
-
     if (!cell) {
         cell = [[SAImageCollectionViewCell alloc] init];
-        
     }
 
     switch (mediaObject.type) {
@@ -167,8 +163,7 @@ static NSString *SACellMediaIdentify = @"SAMediaCollectionCell";
             
             break;
         case SAScrollMediaTypeOther:
-            NSAssert(nil, @"not complete yet..., for subclassing later on");
-
+            // Unimplemented
             break;
         default:
             break;
@@ -181,12 +176,9 @@ static NSString *SACellMediaIdentify = @"SAMediaCollectionCell";
     if ([[collectionView cellForItemAtIndexPath:indexPath] isMemberOfClass:[SAMediaCollectionViewCell class]]) {
         SAMediaCollectionViewCell *mediaCell = (SAMediaCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
         [mediaCell playStop];
-        
     }
     
     [self.delegate collectionView:self didSelectItemAtIndexPath:indexPath];
-    
 }
-
 
 @end

@@ -15,23 +15,23 @@
 @implementation SAScrollTableViewCell
 
 #pragma mark -
-#pragma mark - SAScrollTableViewCell
+#pragma mark - Init
+
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+
     if (self) {
         [self initialize];
-
     }
 
     return self;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     
     if (self) {
         [self initialize];
-        
     }
     
     return self;
@@ -39,22 +39,13 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+
     [self initialize];
-    
 }
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];    
-
-}
-
-
+#pragma mark -
 #pragma mark - Setup
+
 - (void)initialize {
     self.scrollView = [[SAScrollCellView alloc] initWithFrame:CGRectMake(0,
                                                                          0,
@@ -64,38 +55,32 @@
     self.scrollView.delegate = self;
     
     [self.contentView addSubview:self.scrollView];
-    
 }
 
-
+#pragma mark -
 #pragma mark - Media & Styles
+
 - (void)setMedia:(NSArray *)media {
     [self.scrollView setData:media];
-
 }
 
 - (void) setTitleTextColor:(UIColor *)textColor withBackgroundColor:(UIColor *)bgColor {
     [self.scrollView setTitleTextColor:textColor withBackgroundColor:bgColor];
-
 }
 
 - (void)setScrollBackgroundColor:(UIColor *)color {
     if (color) {
         self.scrollView.backgroundColor = color;
-        
     }
-
 }
 
-
+#pragma mark -
 #pragma mark - SAImageScrollViewDelegate
+
 - (void)collectionView:(SAScrollCellView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     if ([self.delegate respondsToSelector:@selector(scrollTableViewCell:didSelectMediaAtIndexPath:atRow:)]) {
         [self.delegate scrollTableViewCell:self didSelectMediaAtIndexPath:indexPath atRow:self.tag];
-
     }
-
 }
-
 
 @end
