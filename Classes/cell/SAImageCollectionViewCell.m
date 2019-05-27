@@ -53,7 +53,7 @@
 }
 
 - (void)setImageWithURL:(NSURL *)url {
-    [self.imageView setImageWithURL:url];
+    [self.imageView sd_setImageWithURL:url];
     
 }
 
